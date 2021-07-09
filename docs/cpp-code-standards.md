@@ -6,7 +6,7 @@ tableofcontents: 1
 
 ## Intro
 
-### Why are conding standards important?
+### Why are coding standards important?
 
 It makes it easier for everyone to maintain and read the written code as well as it gives us more control over it.
 
@@ -32,11 +32,15 @@ Notepad++:
 
 Settings -> Preferences -> Language -> Tab size: 4, Replace by space: checked
 
+CLion:
+
+File -> Settings -> Editor -> Code Style -> C/C++ -> Tabs and Indents -> Use tab character: unchecked, Tab size: 4, Indent: 4
+
 ### Comments
 
 Always comment code where it is not typical repeated code and where the code is not self-explanatory.
 
-Comments should either be placed dierectly above the code, or directly beside it.
+Comments should either be placed directly above the code, or directly beside it.
 
 ```cpp
 // A Comment
@@ -49,7 +53,7 @@ if (a == b)
 
 ### Whitespace
 
-Trailing whitespace is a not allowed.
+Trailing whitespaces are not allowed.
 
 You should also not have unneeded spaces within a bracket. 
 
@@ -68,7 +72,7 @@ if (var)
 
 ### Brackets
 
-When we work with if or else statements, etc, we always use brackets.
+When we work with control flow statements, for example if / else, we always use curly brackets.
 
 ```cpp
 if (var)
@@ -84,7 +88,7 @@ else
 
 ### Random numbers vs. Constants
 
-Constants makes the code easier to read and understand, they also provide a safe guard and prevents numbers from being hard-coded.
+Constants make the code easier to read and understand, they also provide a safe guard and prevents numbers from being hard-coded.
 
 Wrong:
 
@@ -106,7 +110,7 @@ if (player->GetQuestStatus(QUEST_BEAT_UP) == QUEST_STATUS_INCOMPLETE)
 
 ### Enumerations vs. define
 
-It is strongly advised to avoid using #define for constants. use either a const variable or an enum if multiple variables can be grouped togehter.
+It is strongly advised to avoid using #define for constants. Use either a const variable or an enum if multiple variables can be grouped together.
 
 Enums must have a name. Separate constant on different enums depending on their type.
 
@@ -123,7 +127,7 @@ constexpr uint32 SPELL_4 = 4444;
 
 ### Standard prefixes for constants
 
-All constants that we store have a standardized prefix.
+All constants that we declare have a standardized prefix.
 
 | PREFIX | Comment  |
 | :----- | :------- |
@@ -155,7 +159,7 @@ ACHIEVE_MAKE_IT_COUNT
 
 Never use HUNGARIAN NOTATION in variable names!
 
-for public/protected members or global variables:
+For public/protected members or global variables:
 
 ```cpp
 uint64 SomeGuid;
@@ -165,7 +169,7 @@ bool IsEnraged;
 float HeightData;
 ```
 
-for private members:
+For private members:
 
 ```cpp
 uint64 _someGuid;
@@ -175,7 +179,7 @@ bool _isDead;
 float _heightData;
 ```
 
-Methods are always UpperCamelCase and their parameters in lowerCamelCase
+Methods are always UpperCamelCase and their parameters lowerCamelCase
 
 ```cpp
 void DoSomething(uint32 someNumber)
@@ -202,13 +206,15 @@ Player* player;
 Unit* unit;
 ```
 
-We never use multiple declaration with pointers
+We never use multiple declaration with pointers.
+
+Wrong:
 
 ```cpp
 Something* obj1, *obj2;
 ```
 
-The proper way to do this is
+Correct:
 
 ```cpp
 Something* obj1;
@@ -226,7 +232,7 @@ Never define Creature\* me; in a creature script!
 
 ### Defining const variables
 
-const keyword should always go after type name
+The `const` keyword should always be put after the type:
 
 ```cpp
 Player const* player; // player object is constant
@@ -236,7 +242,7 @@ SpellEntry const* const spell; // both spell and pointer to spell are constant
 
 ### Static variables
 
-static keyword always should be put as first
+The `static` keyword always should be put before the type:
 
 ```cpp
 static uint32 someVar = 5;
