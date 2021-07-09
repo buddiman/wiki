@@ -33,7 +33,7 @@ INSERT INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `Q
 
 ### UPDATE
 
-Make sure your queries are precise so you avoid changing something you do not want to edit.
+Make sure your queries are precise, so you avoid changing something you do not want to edit.
 
 Rule of thumb, always include all primary keys in your WHERE clause.
 
@@ -120,7 +120,7 @@ UPDATE `table_1` SET `field_1` = 'someValue' WHERE `entry` IN (1000, 2000, 3000)
 
 ### Flags & Bits
 
-For fields in the database where we work with flags it is always preffered that we add or remove flags instead of overriding them.
+For fields in the database where we work with flags it is always preferred that we add or remove flags instead of overriding them.
 
 Wrong:
 
@@ -175,7 +175,7 @@ This also applies to utf8_unicode_ci etc.
 
 ### Check Constraints
 
-You can see [here](https://github.com/Azerothcore/azerothcore-wotlk/blob/master/data/sql/base/db_auth/realmlist.sql) how check contraints are made.
+You can see [here](https://github.com/Azerothcore/azerothcore-wotlk/blob/master/data/sql/base/db_auth/realmlist.sql) how check constraints are made.
 
 All active Check Constraints can be found by using this query:
 
